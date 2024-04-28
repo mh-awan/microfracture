@@ -2,7 +2,7 @@ const state = {
     valueUnderTest: null
 }
 
-const expect = (entity) => {
+const expect = (entity: any) => {
     state.valueUnderTest = entity;
 
     return {
@@ -10,7 +10,7 @@ const expect = (entity) => {
     }
 }
 
-const to = (entity) => {
+const to = (entity: any) => {
     return {
         be: be(entity),
         equal: equal
@@ -18,22 +18,20 @@ const to = (entity) => {
 }
 
 // type check
-const be = (type) => {
+const be = (type: any) => {
     return {
         ofNumericType: isNumericType(type)
     }
 }
 
 // content check
-const equal = (content) => {
+const equal = (content: any) => {
     return state.valueUnderTest === content;
 }
 
-const isNumericType = (type) => {
+const isNumericType = (type: any) => {
     return !isNaN(type) && !isNaN(parseFloat(type));
 }
 
 
-module.exports = {
-    expect
-}
+export default expect;

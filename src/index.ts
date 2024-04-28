@@ -1,4 +1,4 @@
-const { expect } = require('./lib');
+import expect from './lib';
 
 const x = 4;
 
