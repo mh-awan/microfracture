@@ -1,14 +1,14 @@
-export interface ValueUnderTest {
-    valueUnderTest: null | any;
+export interface ValueUnderTest<T> {
+    valueUnderTest: null | T;
 }
 
-export interface ExpectClause {
-    to: To;
+export interface ExpectClause<T> {
+    to: To<T>;
 }
 
-export interface To {
+export interface To<T> {
     be: Be;
-    equal: (content: any) => boolean;
+    equal: (content: T) => boolean;
 }
 
 export interface Be {
